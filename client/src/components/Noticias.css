@@ -1,0 +1,95 @@
+.noticias-container {
+    position: absolute;
+    top: 15%;
+    left: 7%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 300px; /* Ancho máximo del contenedor */
+  }
+  
+  .noticias-titulo {
+    color: #fff; /* Color del texto */
+    margin: 0; /* Elimina el margen por defecto */
+    font-size: 18px; /* Tamaño del texto */
+  }
+  
+
+
+  .noticias-cerrar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+  }
+  
+  .noticias-cerrar:hover {
+    color: #ff6347; /* Cambia el color al pasar el ratón */
+  }
+
+
+
+  
+  .noticias-contenido {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .noticias-contenido ul {
+    padding-left: 20px; /* Sangría para la lista */
+  }
+  
+  .noticias-contenido li {
+    margin-bottom: 5px; /* Espacio entre elementos de la lista */
+  }
+
+  .noticias-enlace {
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado */
+    transition: color 0.3s ease; /* Transición suave al cambiar de color */
+  }
+  
+  .noticias-enlace:hover {
+    color: #ff6347; /* Cambia el color al pasar el ratón */
+    text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+  }
+
+
+  .noticias-contenido {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
+    pointer-events: auto; /* Permite interacción con los elementos internos */
+  }
+  
+  .noticias-contenido ul {
+    padding-left: 20px;
+  }
+  
+  .noticias-contenido li {
+    margin-bottom: 5px;
+  }
+  
+  .noticias-enlace {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    pointer-events: auto; /* Permite interacción con los enlaces */
+  }
+  
+  .noticias-enlace:hover {
+    color: #ff6347;
+    text-decoration: underline;
+  }
+
+
+  .noticias-header{
+    display: flex;
+    justify-content: space-between;
+  }
