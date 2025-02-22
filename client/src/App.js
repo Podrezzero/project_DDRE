@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './componentes/Header';
+import Home from './pages/Home';
+import Conciertos from './pages/Conciertos';
+import Fotos from './pages/Fotos';
+import Videos from './pages/Videos';
+import Contacto from './pages/Contacto';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    axios.get('/api')
-      .then(response => {
-        setMessage(response.data.message);
-      })
-      .catch(error => {
-        console.error('Hubo un error!', error);
-      });
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>{message}</h1>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/conciertos" element={<Conciertos />} />
+        <Route path="/fotos" element={<Fotos />} />
+        <Route path="/videos" element={<Videos />} />
+        <Route path="/contacto" element={<Contacto />} />
+      </Routes>
+    </Router>
   );
 }
 
