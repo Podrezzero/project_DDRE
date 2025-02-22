@@ -18,3 +18,8 @@
   .footer-text {
     margin: 0; /* Elimina el margen por defecto del párrafo */
   }
+
+  .footer.tema-oscuro {
+    background-color: #fff;
+    color: #100;
+  }

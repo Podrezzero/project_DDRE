@@ -29,12 +29,13 @@
     flex: 1; /* Ocupa la mitad derecha */
     display: flex;
     justify-content: flex-end; /* Alinea el menú a la derecha */
+    margin-right: 5%;
   }
   
   .header-nav {
     display: flex;
     gap: 20px; /* Espacio entre elementos del menú */
-    margin-right: 5%;
+
   }
   
   .header-link {
@@ -46,4 +47,35 @@
   
   .header-link:hover {
     color: #ff6347; /* Cambiar color al pasar el ratón */
+  }
+
+  .tema-boton {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+
+  .header.tema-oscuro {
+    background-color: #fff;
+    color: #100;
+  }
+  
+  .header.tema-oscuro .header-logo,
+  .header.tema-oscuro .header-link {
+    color: #fff;
+  }
+  
+  .header.tema-oscuro .header-link:hover {
+    color: #ff6347;
+  }
+
+  .header.tema-oscuro .header-link{
+    color: #100;
+  }
+
+
+  .header.tema-oscuro .header-logo{
+    color: #100;
   }

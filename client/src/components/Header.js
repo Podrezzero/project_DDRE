@@ -1,20 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Para manejar la navegación
-import './Header.css'; // Archivo de estilos
+import React, { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
+import './Header.css';
 
 const Header = () => {
+  const { temaOscuro, toggleTema } = useContext(ThemeContext);
+
   return (
-    <header className="header">
+    <header className={`header ${temaOscuro ? 'tema-oscuro' : ''}`}>
       <div className="header-left">
-        <Link to="/" className="header-logo">DDRE</Link>
+        <a href="/" className="header-logo">DDRE</a>
       </div>
       <div className="header-right">
         <nav className="header-nav">
-          <Link to="/conciertos" className="header-link">Conciertos</Link>
-          <Link to="/fotos" className="header-link">Fotos</Link>
-          <Link to="/videos" className="header-link">Videos</Link>
-          <Link to="/contacto" className="header-link">Contacto</Link>
+          <a href="/conciertos" className="header-link">Conciertos</a>
+          <a href="/fotos" className="header-link">Fotos</a>
+          <a href="/videos" className="header-link">Videos</a>
+          <a href="/contacto" className="header-link">Contacto</a>
         </nav>
+        <button onClick={toggleTema} className="tema-boton">
+          {temaOscuro ? '⚫':'⚪' }
+        </button>
       </div>
     </header>
   );

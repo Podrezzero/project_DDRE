@@ -3,7 +3,15 @@ import './Noticias.css';
 
 const Noticias = () => {
   const [mostrarNoticias, setMostrarNoticias] = useState(false);
+  const [noticias, setNoticias] = useState([]); // Estado para las noticias
   const noticiasRef = useRef(null); // Referencia al contenedor de noticias
+
+  // Cargar noticias desde el backend
+  useEffect(() => {
+    fetch('http://localhost:5001/api/noticias')
+      .then((response) => response.json())
+      .then((data) => setNoticias(data));
+  }, []);
 
   const toggleNoticias = (event) => {
     event.stopPropagation(); // Evita que el evento se propague
@@ -42,28 +50,19 @@ const Noticias = () => {
 
       {mostrarNoticias && (
         <div className="noticias-contenido">
-          <p>Aquí van las últimas noticias...</p>
           <ul>
-            <li>
-              <a href="/concierto" className="noticias-enlace">
-                Nuevo concierto anunciado para el 15 de diciembre.
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.rollingstone.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="noticias-enlace"
-              >
-                Entrevista exclusiva con la banda en Rolling Stone.
-              </a>
-            </li>
-            <li>
-              <a href="/single" className="noticias-enlace">
-                Lanzamiento del nuevo single "4 Plumas".
-              </a>
-            </li>
+            {noticias.map((noticia) => (
+              <li key={noticia.id}>
+                <a
+                  href={noticia.url}
+                  className="noticias-enlace"
+                  target="_blank" // Abre en una nueva pestaña
+                  rel="noopener noreferrer" // Mejora la seguridad
+                >
+                  {noticia.titulo}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       )}

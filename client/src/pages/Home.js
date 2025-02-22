@@ -1,9 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Noticias from '../components/Noticias'; // Importa el componente
-import foto1 from '../assets/fotoHome1.jpg';
-import foto2 from '../assets/fotoHome2.jpg';
-import foto3 from '../assets/fotoHome3.jpg';
-import foto4 from '../assets/fotoHome4.jpg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -12,7 +8,15 @@ import 'swiper/css/effect-fade';
 import './Home.css';
 
 const Home = () => {
-  const images = [foto1, foto2, foto3, foto4];
+  const [sliderImages, setSliderImages] = useState([]);
+
+  // Cargar imágenes del slider desde la base de datos
+  useEffect(() => {
+    fetch('http://localhost:5001/api/slider')
+      .then((response) => response.json())
+      .then((data) => setSliderImages(data))
+      .catch((error) => console.error('Error cargando imágenes:', error));
+  }, []);
 
   return (
     <div className="home-container">
@@ -27,11 +31,11 @@ const Home = () => {
         navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
         loop={true}
       >
-        {images.map((image, index) => (
-          <SwiperSlide key={index}>
+        {sliderImages.map((image) => (
+          <SwiperSlide key={image.id}>
             <div
               className="slide"
-              style={{ backgroundImage: `url(${image})` }}
+              style={{ backgroundImage: `url(${image.image})` }}
             ></div>
           </SwiperSlide>
         ))}

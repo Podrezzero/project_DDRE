@@ -1,0 +1,246 @@
+/* Estilos generales */
+.admin-container {
+    padding: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    margin-top: 60px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #555;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  /* Estilos para el slider de imágenes */
+  .admin-container section {
+    margin-bottom: 30px;
+  }
+  
+  .admin-container input[type="text"],
+  .admin-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .admin-container textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .admin-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .admin-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para la lista de imágenes */
+  .admin-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-container ul li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .admin-container ul li img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  /* Estilos para la lista de noticias */
+  .admin-container ul li h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .admin-container ul li p {
+    margin: 5px 0 0;
+    color: #666;
+  }
+
+
+  .formulario-edicion {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .formulario-edicion input,
+  .formulario-edicion textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .formulario-edicion textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .formulario-edicion button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .formulario-edicion button:first-of-type {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .formulario-edicion button:first-of-type:hover {
+    background-color: #0056b3;
+  }
+  
+  .formulario-edicion button:last-of-type {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .formulario-edicion button:last-of-type:hover {
+    background-color: #bbb;
+  }
+
+  .admin-noticias{
+    margin-top: 50px;
+    margin-bottom: 75px;
+  }
+
+  .admin-noticias li{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .admin-noticias button{
+    height: 40px;
+
+  }
+
+  .botones-noticia{
+    display: flex;
+    gap: 10px;
+  }
+
+  .admin-noticias button:nth-of-type(2){
+    background-color: #dd2255;
+  }
+
+
+  /* Estilos para el modal de edición */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que el modal esté por encima de todo */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content button {
+  margin-right: 10px;
+}
+
+.modal-content button:nth-of-type(2) {
+  background-color: #dd2255;;
+}
+
+.modal-content input{
+  max-width: 95%;
+}
+
+.modal-content textarea{
+  max-width: 95%;
+}
+
+
+/* Estilos para el grid de imágenes */
+.grid-imagenes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+  gap: 20px; /* Espacio entre las imágenes */
+  margin-top: 20px;
+}
+
+.imagen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.imagen-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.imagen-container button {
+  margin-top: 10px;
+  background-color: #dd2255;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.imagen-container button:hover {
+  background-color: #bb1a44;
+}

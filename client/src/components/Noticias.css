@@ -34,7 +34,7 @@
 
 
 
-  
+
   .noticias-contenido {
     margin-top: 10px;
     color: #fff;
@@ -93,3 +93,10 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .noticias-titulo:hover{
+    color: #ff6347; /* Cambiar color al pasar el ratón */
+  }
+
+
+  
